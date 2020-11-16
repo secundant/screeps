@@ -26,6 +26,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           reference: 'workspace:.'
         },
         {
+          name: '@app/game',
+          reference: 'workspace:packages/game'
+        },
+        {
           name: '@app/react-nextjs',
           reference: 'workspace:packages/react-nextjs'
         }
@@ -33,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       enableTopLevelFallback: true,
       ignorePatternData: '(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)',
       fallbackExclusionList: [
+        ['@app/game', ['workspace:packages/game']],
         ['@app/react-nextjs', ['workspace:packages/react-nextjs']],
         ['my-app', ['workspace:.']]
       ],
@@ -191,6 +196,39 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['cross-fetch', 'npm:3.0.5']
                 ],
                 linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@app/game',
+          [
+            [
+              'workspace:packages/game',
+              {
+                packageLocation: './packages/game/',
+                packageDependencies: [
+                  ['@app/game', 'workspace:packages/game'],
+                  [
+                    '@rollup/plugin-commonjs',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:15.1.0'
+                  ],
+                  [
+                    '@rollup/plugin-node-resolve',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:9.0.0'
+                  ],
+                  ['@types/node', 'npm:14.14.7'],
+                  ['@types/screeps', 'npm:3.2.1'],
+                  ['rollup', 'npm:2.33.2'],
+                  ['rollup-plugin-clear', 'npm:2.0.7'],
+                  ['rollup-plugin-screeps', 'npm:1.0.1'],
+                  [
+                    'rollup-plugin-typescript2',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:0.28.0'
+                  ],
+                  ['source-map', 'npm:0.6.1']
+                ],
+                linkType: 'SOFT'
               }
             ]
           ]
@@ -4355,6 +4393,100 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          '@rollup/plugin-commonjs',
+          [
+            [
+              'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:15.1.0',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/@rollup-plugin-commonjs-virtual-0234533cba/0/cache/@rollup-plugin-commonjs-npm-15.1.0-8f550a0b52-307bdc17f3.zip/node_modules/@rollup/plugin-commonjs/',
+                packageDependencies: [
+                  [
+                    '@rollup/plugin-commonjs',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:15.1.0'
+                  ],
+                  [
+                    '@rollup/pluginutils',
+                    'virtual:0234533cba9ceff3366299eb2c13b8cefe20dcf18d440e7bda6cb989f7194be8e6da5bcc31d3bc7a7b5f62924c7226c4e2c30cf7d90dda403e5153344b21f119#npm:3.1.0'
+                  ],
+                  ['@types/rollup', null],
+                  ['commondir', 'npm:1.0.1'],
+                  ['estree-walker', 'npm:2.0.1'],
+                  ['glob', 'npm:7.1.6'],
+                  ['is-reference', 'npm:1.2.1'],
+                  ['magic-string', 'npm:0.25.7'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa'
+                  ],
+                  ['rollup', 'npm:2.33.2']
+                ],
+                packagePeers: ['@types/rollup', 'rollup'],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@rollup/plugin-node-resolve',
+          [
+            [
+              'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:9.0.0',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/@rollup-plugin-node-resolve-virtual-335851182e/0/cache/@rollup-plugin-node-resolve-npm-9.0.0-6923fb804c-34576bbd9c.zip/node_modules/@rollup/plugin-node-resolve/',
+                packageDependencies: [
+                  [
+                    '@rollup/plugin-node-resolve',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:9.0.0'
+                  ],
+                  [
+                    '@rollup/pluginutils',
+                    'virtual:0234533cba9ceff3366299eb2c13b8cefe20dcf18d440e7bda6cb989f7194be8e6da5bcc31d3bc7a7b5f62924c7226c4e2c30cf7d90dda403e5153344b21f119#npm:3.1.0'
+                  ],
+                  ['@types/resolve', 'npm:1.17.1'],
+                  ['@types/rollup', null],
+                  ['builtin-modules', 'npm:3.1.0'],
+                  ['deepmerge', 'npm:4.2.2'],
+                  ['is-module', 'npm:1.0.0'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa'
+                  ],
+                  ['rollup', 'npm:2.33.2']
+                ],
+                packagePeers: ['@types/rollup', 'rollup'],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@rollup/pluginutils',
+          [
+            [
+              'virtual:0234533cba9ceff3366299eb2c13b8cefe20dcf18d440e7bda6cb989f7194be8e6da5bcc31d3bc7a7b5f62924c7226c4e2c30cf7d90dda403e5153344b21f119#npm:3.1.0',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/@rollup-pluginutils-virtual-7eff7b7461/0/cache/@rollup-pluginutils-npm-3.1.0-b44b222e7d-45da6411e0.zip/node_modules/@rollup/pluginutils/',
+                packageDependencies: [
+                  [
+                    '@rollup/pluginutils',
+                    'virtual:0234533cba9ceff3366299eb2c13b8cefe20dcf18d440e7bda6cb989f7194be8e6da5bcc31d3bc7a7b5f62924c7226c4e2c30cf7d90dda403e5153344b21f119#npm:3.1.0'
+                  ],
+                  ['@types/estree', 'npm:0.0.39'],
+                  ['@types/rollup', null],
+                  ['estree-walker', 'npm:1.0.1'],
+                  ['picomatch', 'npm:2.2.2'],
+                  ['rollup', 'npm:2.33.2']
+                ],
+                packagePeers: ['@types/rollup', 'rollup'],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           '@sinonjs/commons',
           [
             [
@@ -4456,6 +4588,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/babel__traverse', 'npm:7.0.15'],
                   ['@babel/types', 'npm:7.12.1']
                 ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@types/estree',
+          [
+            [
+              'npm:0.0.39',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-estree-npm-0.0.39-f898500e96-43e5361de3.zip/node_modules/@types/estree/',
+                packageDependencies: [['@types/estree', 'npm:0.0.39']],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'npm:0.0.45',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-estree-npm-0.0.45-71d6bd2510-9d339cbcf2.zip/node_modules/@types/estree/',
+                packageDependencies: [['@types/estree', 'npm:0.0.45']],
                 linkType: 'HARD'
               }
             ]
@@ -4585,6 +4740,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/@types-node-npm-14.14.6-6c20289547-9b06b04ab2.zip/node_modules/@types/node/',
                 packageDependencies: [['@types/node', 'npm:14.14.6']],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'npm:14.14.7',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-node-npm-14.14.7-e4d93f4d9a-4fc8434bfe.zip/node_modules/@types/node/',
+                packageDependencies: [['@types/node', 'npm:14.14.7']],
                 linkType: 'HARD'
               }
             ]
@@ -4724,6 +4888,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/react-transition-group', 'npm:4.4.0'],
                   ['@types/react', 'npm:16.9.55']
                 ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@types/resolve',
+          [
+            [
+              'npm:1.17.1',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-resolve-npm-1.17.1-9a8396bef2-8e72a73574.zip/node_modules/@types/resolve/',
+                packageDependencies: [
+                  ['@types/resolve', 'npm:1.17.1'],
+                  ['@types/node', 'npm:14.14.6']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          '@types/screeps',
+          [
+            [
+              'npm:3.2.1',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-screeps-npm-3.2.1-ebec162f2f-b0cafe4306.zip/node_modules/@types/screeps/',
+                packageDependencies: [['@types/screeps', 'npm:3.2.1']],
                 linkType: 'HARD'
               }
             ]
@@ -6044,6 +6239,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'async-limiter',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/async-limiter-npm-1.0.1-7e6819bcdb-d123312ace.zip/node_modules/async-limiter/',
+                packageDependencies: [['async-limiter', 'npm:1.0.1']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'asynckit',
           [
             [
@@ -6094,6 +6303,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/aws4-npm-1.10.1-c15d26e3d7-53f2897324.zip/node_modules/aws4/',
                 packageDependencies: [['aws4', 'npm:1.10.1']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'axios',
+          [
+            [
+              'npm:0.18.1',
+              {
+                packageLocation:
+                  './.yarn/cache/axios-npm-0.18.1-a90f17c1fb-6188a1b815.zip/node_modules/axios/',
+                packageDependencies: [
+                  ['axios', 'npm:0.18.1'],
+                  ['follow-redirects', 'npm:1.5.10'],
+                  ['is-buffer', 'npm:2.0.5']
+                ],
                 linkType: 'HARD'
               }
             ]
@@ -6907,6 +7134,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/buffer-xor-npm-1.0.3-56bb81b0dd-58ce260802.zip/node_modules/buffer-xor/',
                 packageDependencies: [['buffer-xor', 'npm:1.0.3']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'bufferutil',
+          [
+            [
+              'npm:4.0.2',
+              {
+                packageLocation:
+                  './.yarn/unplugged/bufferutil-npm-4.0.2-6f283689b1/node_modules/bufferutil/',
+                packageDependencies: [
+                  ['bufferutil', 'npm:4.0.2'],
+                  ['node-gyp', 'npm:7.1.2'],
+                  ['node-gyp-build', 'npm:4.2.3']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'builtin-modules',
+          [
+            [
+              'npm:3.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/builtin-modules-npm-3.1.0-fb00ef3f7a-54f062393c.zip/node_modules/builtin-modules/',
+                packageDependencies: [['builtin-modules', 'npm:3.1.0']],
                 linkType: 'HARD'
               }
             ]
@@ -8423,6 +8682,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: ['supports-color'],
                 linkType: 'HARD'
               }
+            ],
+            [
+              'virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/debug-virtual-f2284580f9/0/cache/debug-npm-3.1.0-9f0accb99b-1295acd5e0.zip/node_modules/debug/',
+                packageDependencies: [
+                  [
+                    'debug',
+                    'virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0'
+                  ],
+                  ['ms', 'npm:2.0.0'],
+                  ['supports-color', null]
+                ],
+                packagePeers: ['supports-color'],
+                linkType: 'HARD'
+              }
             ]
           ]
         ],
@@ -9665,6 +9941,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'estree-walker',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/estree-walker-npm-1.0.1-e916593b23-85e7cee763.zip/node_modules/estree-walker/',
+                packageDependencies: [['estree-walker', 'npm:1.0.1']],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'npm:2.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/estree-walker-npm-2.0.1-fb1693c2a7-51ae3892e2.zip/node_modules/estree-walker/',
+                packageDependencies: [['estree-walker', 'npm:2.0.1']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'esutils',
           [
             [
@@ -10295,6 +10594,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'follow-redirects',
+          [
+            [
+              'npm:1.5.10',
+              {
+                packageLocation:
+                  './.yarn/cache/follow-redirects-npm-1.5.10-bde6f43576-6e58e02c31.zip/node_modules/follow-redirects/',
+                packageDependencies: [
+                  ['follow-redirects', 'npm:1.5.10'],
+                  [
+                    'debug',
+                    'virtual:bde6f435769d1a96c3f371d2e8a88314847816fb841f758b3628da60329c36f988ca42f6984dc53bb31dd306522878e1e5d568caeca7af42e4f19b238d6261b3#npm:3.1.0'
+                  ]
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'for-in',
           [
             [
@@ -10385,6 +10704,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/fs-constants-npm-1.0.0-59576b2177-b8382395f5.zip/node_modules/fs-constants/',
                 packageDependencies: [['fs-constants', 'npm:1.0.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'fs-extra',
+          [
+            [
+              'npm:8.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/fs-extra-npm-8.1.0-197473387f-056a96d4f5.zip/node_modules/fs-extra/',
+                packageDependencies: [
+                  ['fs-extra', 'npm:8.1.0'],
+                  ['graceful-fs', 'npm:4.2.4'],
+                  ['jsonfile', 'npm:4.0.0'],
+                  ['universalify', 'npm:0.1.2']
+                ],
                 linkType: 'HARD'
               }
             ]
@@ -10660,6 +10998,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'git-rev-sync',
+          [
+            [
+              'npm:2.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/git-rev-sync-npm-2.1.0-8603dbcfc4-8662f75090.zip/node_modules/git-rev-sync/',
+                packageDependencies: [
+                  ['git-rev-sync', 'npm:2.1.0'],
+                  ['escape-string-regexp', 'npm:1.0.5'],
+                  ['graceful-fs', 'npm:4.1.15'],
+                  ['shelljs', 'npm:0.8.4']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'github-from-package',
           [
             [
@@ -10790,6 +11147,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           'graceful-fs',
           [
+            [
+              'npm:4.1.15',
+              {
+                packageLocation:
+                  './.yarn/cache/graceful-fs-npm-4.1.15-90e9b401bb-4248d318a1.zip/node_modules/graceful-fs/',
+                packageDependencies: [['graceful-fs', 'npm:4.1.15']],
+                linkType: 'HARD'
+              }
+            ],
             [
               'npm:4.2.4',
               {
@@ -11476,6 +11842,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'interpret',
+          [
+            [
+              'npm:1.4.0',
+              {
+                packageLocation:
+                  './.yarn/cache/interpret-npm-1.4.0-17b4b5b0a4-f15725d762.zip/node_modules/interpret/',
+                packageDependencies: [['interpret', 'npm:1.4.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'invariant',
           [
             [
@@ -11598,6 +11978,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [['is-buffer', 'npm:1.1.6']],
                 linkType: 'HARD'
               }
+            ],
+            [
+              'npm:2.0.5',
+              {
+                packageLocation:
+                  './.yarn/cache/is-buffer-npm-2.0.5-17e563f277-1a6dc68206.zip/node_modules/is-buffer/',
+                packageDependencies: [['is-buffer', 'npm:2.0.5']],
+                linkType: 'HARD'
+              }
             ]
           ]
         ],
@@ -11642,6 +12031,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/is-core-module-npm-2.0.0-5ae474e0e9-de99dfbdf1.zip/node_modules/is-core-module/',
                 packageDependencies: [
                   ['is-core-module', 'npm:2.0.0'],
+                  ['has', 'npm:1.0.3']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'npm:2.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/is-core-module-npm-2.1.0-8bf3cc89e9-6e9d45be21.zip/node_modules/is-core-module/',
+                packageDependencies: [
+                  ['is-core-module', 'npm:2.1.0'],
                   ['has', 'npm:1.0.3']
                 ],
                 linkType: 'HARD'
@@ -11872,6 +12273,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'is-module',
+          [
+            [
+              'npm:1.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/is-module-npm-1.0.0-79ba918283-2cbd41e276.zip/node_modules/is-module/',
+                packageDependencies: [['is-module', 'npm:1.0.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'is-negative-zero',
           [
             [
@@ -11951,6 +12366,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/is-potential-custom-element-name-npm-1.0.0-0000641861-55b1ae44cf.zip/node_modules/is-potential-custom-element-name/',
                 packageDependencies: [['is-potential-custom-element-name', 'npm:1.0.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'is-reference',
+          [
+            [
+              'npm:1.2.1',
+              {
+                packageLocation:
+                  './.yarn/cache/is-reference-npm-1.2.1-87ca1743c8-9daa3d7c4d.zip/node_modules/is-reference/',
+                packageDependencies: [
+                  ['is-reference', 'npm:1.2.1'],
+                  ['@types/estree', 'npm:0.0.45']
+                ],
                 linkType: 'HARD'
               }
             ]
@@ -13192,6 +13624,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'jsonfile',
+          [
+            [
+              'npm:4.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/jsonfile-npm-4.0.0-10ce3aea15-a40b7b64da.zip/node_modules/jsonfile/',
+                packageDependencies: [
+                  ['jsonfile', 'npm:4.0.0'],
+                  ['graceful-fs', 'npm:4.2.4']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'jsprim',
           [
             [
@@ -13807,6 +14256,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['lru-cache', 'npm:6.0.0'],
                   ['yallist', 'npm:4.0.0']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'magic-string',
+          [
+            [
+              'npm:0.25.7',
+              {
+                packageLocation:
+                  './.yarn/cache/magic-string-npm-0.25.7-0a0bd9c864-4b70c13eb2.zip/node_modules/magic-string/',
+                packageDependencies: [
+                  ['magic-string', 'npm:0.25.7'],
+                  ['sourcemap-codec', 'npm:1.4.8']
                 ],
                 linkType: 'HARD'
               }
@@ -14833,6 +15299,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['tar', 'npm:6.0.5'],
                   ['which', 'npm:2.0.2']
                 ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'node-gyp-build',
+          [
+            [
+              'npm:4.2.3',
+              {
+                packageLocation:
+                  './.yarn/cache/node-gyp-build-npm-4.2.3-051c80c95f-8512c25498.zip/node_modules/node-gyp-build/',
+                packageDependencies: [['node-gyp-build', 'npm:4.2.3']],
                 linkType: 'HARD'
               }
             ]
@@ -16798,6 +17278,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'rechoir',
+          [
+            [
+              'npm:0.6.2',
+              {
+                packageLocation:
+                  './.yarn/cache/rechoir-npm-0.6.2-0df5f171ec-6646a6bce7.zip/node_modules/rechoir/',
+                packageDependencies: [
+                  ['rechoir', 'npm:0.6.2'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa'
+                  ]
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'regenerate',
           [
             [
@@ -17119,6 +17619,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'resolve',
           [
             [
+              'patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=3388aa',
+              {
+                packageLocation:
+                  './.yarn/cache/resolve-patch-38ce149af0-4bcfb56886.zip/node_modules/resolve/',
+                packageDependencies: [
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=3388aa'
+                  ],
+                  ['path-parse', 'npm:1.0.6']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
               'patch:resolve@npm%3A1.18.1#builtin<compat/resolve>::version=1.18.1&hash=3388aa',
               {
                 packageLocation:
@@ -17129,6 +17644,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'patch:resolve@npm%3A1.18.1#builtin<compat/resolve>::version=1.18.1&hash=3388aa'
                   ],
                   ['is-core-module', 'npm:2.0.0'],
+                  ['path-parse', 'npm:1.0.6']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
+              'patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa',
+              {
+                packageLocation:
+                  './.yarn/cache/resolve-patch-46f4fba2f6-188d5167e8.zip/node_modules/resolve/',
+                packageDependencies: [
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa'
+                  ],
+                  ['is-core-module', 'npm:2.1.0'],
                   ['path-parse', 'npm:1.0.6']
                 ],
                 linkType: 'HARD'
@@ -17310,6 +17841,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
+              'npm:2.7.1',
+              {
+                packageLocation:
+                  './.yarn/cache/rimraf-npm-2.7.1-9a71f3cc37-059efac283.zip/node_modules/rimraf/',
+                packageDependencies: [
+                  ['rimraf', 'npm:2.7.1'],
+                  ['glob', 'npm:7.1.6']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
               'npm:3.0.2',
               {
                 packageLocation:
@@ -17336,6 +17879,96 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['hash-base', 'npm:3.1.0'],
                   ['inherits', 'npm:2.0.4']
                 ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'rollup',
+          [
+            [
+              'npm:2.33.2',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-npm-2.33.2-ed5c703bb6-15cfcc81f1.zip/node_modules/rollup/',
+                packageDependencies: [
+                  ['rollup', 'npm:2.33.2'],
+                  [
+                    'fsevents',
+                    'patch:fsevents@npm%3A2.1.3#builtin<compat/fsevents>::version=2.1.3&hash=127e8e'
+                  ]
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'rollup-plugin-clear',
+          [
+            [
+              'npm:2.0.7',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-plugin-clear-npm-2.0.7-8ea22f93e0-cfeb8190ef.zip/node_modules/rollup-plugin-clear/',
+                packageDependencies: [
+                  ['rollup-plugin-clear', 'npm:2.0.7'],
+                  ['rimraf', 'npm:2.7.1']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'rollup-plugin-screeps',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-plugin-screeps-npm-1.0.1-9ff4381330-499f7719ba.zip/node_modules/rollup-plugin-screeps/',
+                packageDependencies: [
+                  ['rollup-plugin-screeps', 'npm:1.0.1'],
+                  ['git-rev-sync', 'npm:2.1.0'],
+                  ['screeps-api', 'npm:1.12.2']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'rollup-plugin-typescript2',
+          [
+            [
+              'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:0.28.0',
+              {
+                packageLocation:
+                  './.yarn/$$virtual/rollup-plugin-typescript2-virtual-fb643d12b2/0/cache/rollup-plugin-typescript2-npm-0.28.0-ffbee9b0eb-4cd2c6a2fd.zip/node_modules/rollup-plugin-typescript2/',
+                packageDependencies: [
+                  [
+                    'rollup-plugin-typescript2',
+                    'virtual:1291412e57aa8991916e0c15081fd9c709881d3ef555c5c27ee0ea034af211b292ff33e2b08892e21515c2fec5aeee599ecb6a763b32eef550e2594141558c5f#npm:0.28.0'
+                  ],
+                  [
+                    '@rollup/pluginutils',
+                    'virtual:0234533cba9ceff3366299eb2c13b8cefe20dcf18d440e7bda6cb989f7194be8e6da5bcc31d3bc7a7b5f62924c7226c4e2c30cf7d90dda403e5153344b21f119#npm:3.1.0'
+                  ],
+                  ['@types/rollup', null],
+                  ['@types/typescript', null],
+                  ['find-cache-dir', 'npm:3.3.1'],
+                  ['fs-extra', 'npm:8.1.0'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=3388aa'
+                  ],
+                  ['rollup', 'npm:2.33.2'],
+                  ['tslib', 'npm:2.0.1'],
+                  ['typescript', null]
+                ],
+                packagePeers: ['@types/rollup', '@types/typescript', 'rollup', 'typescript'],
                 linkType: 'HARD'
               }
             ]
@@ -17605,6 +18238,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'screeps-api',
+          [
+            [
+              'npm:1.12.2',
+              {
+                packageLocation:
+                  './.yarn/cache/screeps-api-npm-1.12.2-fcbd27ba44-7a43510f6b.zip/node_modules/screeps-api/',
+                packageDependencies: [
+                  ['screeps-api', 'npm:1.12.2'],
+                  ['axios', 'npm:0.18.1'],
+                  ['bufferutil', 'npm:4.0.2'],
+                  ['commander', 'npm:2.20.3'],
+                  [
+                    'debug',
+                    'virtual:88318143fb6d80d1f55c54ae799fe6cfcf29c86ca9b9dae7a485ec5bdb22c3a20f79119854bb9696c57b5a03879e8671e3e9d39fcd8ca2cec3e6655f73233a79#npm:4.3.0'
+                  ],
+                  ['utf-8-validate', 'npm:5.0.3'],
+                  ['ws', 'npm:5.2.2'],
+                  ['yamljs', 'npm:0.3.0']
+                ],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'semver',
           [
             [
@@ -17857,6 +18516,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/shell-quote-npm-1.7.2-8e2768dbb0-3b3d06814c.zip/node_modules/shell-quote/',
                 packageDependencies: [['shell-quote', 'npm:1.7.2']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'shelljs',
+          [
+            [
+              'npm:0.8.4',
+              {
+                packageLocation:
+                  './.yarn/cache/shelljs-npm-0.8.4-e2890f4ce2-bdf68e3c2a.zip/node_modules/shelljs/',
+                packageDependencies: [
+                  ['shelljs', 'npm:0.8.4'],
+                  ['glob', 'npm:7.1.6'],
+                  ['interpret', 'npm:1.4.0'],
+                  ['rechoir', 'npm:0.6.2']
+                ],
                 linkType: 'HARD'
               }
             ]
@@ -18198,6 +18876,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/source-map-url-npm-0.4.0-011efde48b-84d509cfa1.zip/node_modules/source-map-url/',
                 packageDependencies: [['source-map-url', 'npm:0.4.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'sourcemap-codec',
+          [
+            [
+              'npm:1.4.8',
+              {
+                packageLocation:
+                  './.yarn/cache/sourcemap-codec-npm-1.4.8-3a1a9e60b1-4d56d1232a.zip/node_modules/sourcemap-codec/',
+                packageDependencies: [['sourcemap-codec', 'npm:1.4.8']],
                 linkType: 'HARD'
               }
             ]
@@ -19597,6 +20289,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               }
             ],
             [
+              'npm:2.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/tslib-npm-2.0.1-26f70961f9-7b42337a07.zip/node_modules/tslib/',
+                packageDependencies: [['tslib', 'npm:2.0.1']],
+                linkType: 'HARD'
+              }
+            ],
+            [
               'npm:2.0.3',
               {
                 packageLocation:
@@ -20018,6 +20719,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ]
         ],
         [
+          'universalify',
+          [
+            [
+              'npm:0.1.2',
+              {
+                packageLocation:
+                  './.yarn/cache/universalify-npm-0.1.2-9b22d31d2d-420fc65473.zip/node_modules/universalify/',
+                packageDependencies: [['universalify', 'npm:0.1.2']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
           'unset-value',
           [
             [
@@ -20130,6 +20845,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['react', 'npm:17.0.1']
                 ],
                 packagePeers: ['@types/react', 'react'],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'utf-8-validate',
+          [
+            [
+              'npm:5.0.3',
+              {
+                packageLocation:
+                  './.yarn/unplugged/utf-8-validate-npm-5.0.3-70d3f814e3/node_modules/utf-8-validate/',
+                packageDependencies: [
+                  ['utf-8-validate', 'npm:5.0.3'],
+                  ['node-gyp', 'npm:7.1.2'],
+                  ['node-gyp-build', 'npm:4.2.3']
+                ],
                 linkType: 'HARD'
               }
             ]
@@ -20927,6 +21660,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'ws',
           [
             [
+              'npm:5.2.2',
+              {
+                packageLocation:
+                  './.yarn/cache/ws-npm-5.2.2-173bcd57b2-c8217b5482.zip/node_modules/ws/',
+                packageDependencies: [
+                  ['ws', 'npm:5.2.2'],
+                  ['async-limiter', 'npm:1.0.1']
+                ],
+                linkType: 'HARD'
+              }
+            ],
+            [
               'virtual:9d099031b90fc8a274f2b32435263e19422ee3c9337fd65f27b60c6a50f33b1170ce05c87a5370ded8c05a1293b7b83ed44851966d8efaffe544d06ba235364f#npm:7.3.1',
               {
                 packageLocation:
@@ -21040,6 +21785,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/yaml-npm-1.10.0-3e2d763b45-d4cc9f9724.zip/node_modules/yaml/',
                 packageDependencies: [['yaml', 'npm:1.10.0']],
+                linkType: 'HARD'
+              }
+            ]
+          ]
+        ],
+        [
+          'yamljs',
+          [
+            [
+              'npm:0.3.0',
+              {
+                packageLocation:
+                  './.yarn/cache/yamljs-npm-0.3.0-b0b262e524-3ee0f59843.zip/node_modules/yamljs/',
+                packageDependencies: [
+                  ['yamljs', 'npm:0.3.0'],
+                  ['argparse', 'npm:1.0.10'],
+                  ['glob', 'npm:7.1.6']
+                ],
                 linkType: 'HARD'
               }
             ]
